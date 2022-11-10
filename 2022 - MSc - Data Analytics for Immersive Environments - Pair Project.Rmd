@@ -3,6 +3,8 @@ title: "Data Analytics for Immersive Environments - Pair Project"
 author: "Niall McGuinness"
 date: "November 2022"
 output:
+  word_document:
+    toc: TRUE
   html_document:
     toc: TRUE
     number_sections: FALSE
@@ -13,9 +15,7 @@ output:
     theme: cerulean
   pdf_document:
     toc: TRUE
-  word_document:
-    toc: TRUE
-subtitle: 'Descriptive & Inferential Analysis of a Virtual Jungian Sandplay VR Project'
+subtitle: 'Descriptive & Inferential Analysis of a Jungian Sandplay VR Project'
 ---
 
 <style>
@@ -78,7 +78,7 @@ The data gathered will be made available to each student group via Moodle. Each 
 3. Determine if the data meet the assumptions required by any statistical test.
 4. Provide descriptive statistics (graphs and tables) for any assumptions made.
 5. Analyse the data to provide the hypothesis testing conclusion. 
-6. Determine the 95% confidence interval for the population mean of each group, and the 95% confidence interval for the difference between the means of the two groups for a variable of your choice.
+6. Determine the 95% confidence interval for the population mean of each group, and the 95% confidence interval for the difference between the means of any two groups for a variable of your choice.
 7. Determine the degree of correlation between any explanatory and response variable of your choice.
 
 ## Lab Report Requirements
