@@ -1,0 +1,174 @@
+---
+title: "Data Analytics for Immersive Environments - Pair Project"
+author: "Niall McGuinness"
+date: "November 2022"
+output:
+  html_document:
+    toc: TRUE
+    number_sections: FALSE
+    toc_float: TRUE
+    df_print: paged
+    fig_caption: TRUE
+    code_folding: hide
+    theme: cerulean
+  pdf_document:
+    toc: TRUE
+  word_document:
+    toc: TRUE
+subtitle: 'Descriptive & Inferential Analysis of a Virtual Jungian Sandplay VR Project'
+---
+
+<style>
+body {
+text-align: justify}
+</style>
+
+## Learning Outcomes
+
+To practice the following:
+
+* Formulation of an experiment hypothesis.
+* Application of appropriate statistical tests.
+* Descriptive and inferential analysis of  data.
+* Generation of descriptive statistics.
+* Report generation in R Markdown and R Notebook.
+* Use of R language and RStudio.
+
+
+## Introduction
+
+*"Jungian Sandplay is a therapeutic method that uses sand, miniature objects, and image making within the context of the psychology of Carl Jung...There are two rectangular trays of sand, one with dry sand and the other with wet sand along with shelves filled with miniature objects and figurines….playing with sand and objects in this therapeutic setting can help them in a significant and profound way...Jungian Sandplay is a method of ‘depth psychotherapy’. This means that it offers a specialised way to learn more about internal experience and working through difficulties sourced there."* (Maeve Dooley, October 2018)
+
+```{r Jungian1, fig.align = 'center', out.width = '75%', fig.cap = 'Fig 1.0 Jungian Sandplay room'}
+knitr::include_graphics(here::here("images", "jungian1.jpg"))
+```
+```{r Jungian2, fig.align = 'center', out.width = '75%', fig.cap = 'Fig 2.0 Jungian Sandplay sand board'}
+knitr::include_graphics(here::here("images", "jungian2.jpg"))
+```
+
+
+*"Post-traumatic stress disorder (PTSD) is a mental health condition that's triggered by a terrifying event — either experiencing it or witnessing it...PTSD symptoms are generally grouped into four types: intrusive memories, avoidance, negative changes in thinking and mood, and changes in physical and emotional reactions. Symptoms can vary over time or vary from person to person."* (Mayo Clinic, November 2022). 
+
+Non-pharmacological therapy types for PTSD are normally described under the umbrella term of Cognitive Behavioural Therapy (CBT). The most common PTSD-specific treatments for CBT are:
+
+* Prolonged Exposure Therapy
+* Eye Movement Desensitization and Reprocessing
+* Stress Inoculation Training
+
+There are several methods employed to assess patient PTSD including observer-rated, self-report, parental report, and physiological measurements. PTSD was assessed using observer-rated (i.e., therapist-rated) and self-report (i.e., PTSD Symptom Scale Self-Report Version (PSS-SR)) measurements, respectively. Both measurements are scaled to the range of 0 to 10. 
+
+## Experiment Details
+
+Data from a study are presented that investigated the effect of Jungian Sandplay therapy, conducted in a virtual reality environment, on psychotherapy patients undergoing treatment for PTSD. Psychological interventions, like Jungian Sandplay therapy, have been shown to decrease PTSD levels in individuals. 
+
+The study consisted of 150 patients (M=75, F=75) divided into the groups listed below, using random sampling.
+
+* Control (traditional CBT, no VR)
+* Static (non-animated model content, VR)
+* Animated (animated model content, VR)
+
+All patients were young adults in the age range of 18 - 25 years. Information on the exact age was not recorded. Gender information was recorded. All groups were of equal size. The 3 groups underwent 12 weeks of treatment for 50 minutes per week with a therapist. During that time the patients either underwent traditional CBT; or used one of the two (quality) versions of the VR app. PTSD measurements for all groups were measured using the observer-rated and self-report mechanisms outlined above. Measurements were taken at the start and end of the study.
+
+## Statistical Analysis Requirements
+
+The data gathered will be made available to each student group via Moodle. Each group will receive a different subset of the results the study participants. As part of this assignment, you are required to perform statistical analysis on these data. This will involve the completion of the following steps:
+
+1. Determine whether the data provided are appropriate for the test(s) available and whether any data cleaning is required. 
+2. Formulate a hypothesis test to be used to compare the effectiveness of the two approaches (control, meditation) used during dental surgery.
+3. Determine if the data meet the assumptions required by any statistical test.
+4. Provide descriptive statistics (graphs and tables) for any assumptions made.
+5. Analyse the data to provide the hypothesis testing conclusion. 
+6. Determine the 95% confidence interval for the population mean of each group, and the 95% confidence interval for the difference between the means of the two groups for a variable of your choice.
+7. Determine the degree of correlation between any explanatory and response variable of your choice.
+
+## Lab Report Requirements
+
+These steps will result in the generation of a single R Notebook file containing the R Code and a short report **(1200 words max excluding plots or tables)**. The R Notebook will have the following structure:
+
+1. Title (including participant names)
+2. Table of Contents
+3. Abstract **(2.5 marks)**
+    + Aim and rationale
+    + Participants and setting
+    + Experiment design
+    + Results gathering
+    + Major findings
+    + Findings/implications
+4. Introduction **(15 marks)** 
+    + Topic and context
+    + ~~Theoretical framework~~
+    + ~~Summary of previous work~~
+    + Rationale
+    + Hypothesis
+5. Method **(20 marks)**
+    + Participants
+    + Design
+    + Materials
+    + Procedure
+6. Results **(40 marks)**
+    + Descriptive statistics
+    + Inferential statistics
+    + Statistical tests
+    + Magnitude and direction of results
+7. Discussion **(10 marks)**
+    + Outline findings and relation to the hypothesis
+    + ~~Compare results to background work reported earlier~~
+    + Limitations (if confounding variables are clearly identified by your group)
+8. References **(2.5 marks)**
+
+## Structure, Presentation & Quality
+
+Your R Notebook source code should output both the code and any data/plot/table to the rendered document (e.g. HTML, PDF, Word).
+
+A total of **2.5 marks** will be awarded for the clear commenting of any (non-trivial) line of R code and a clear description of any novel processing and/or user-defined functions.
+
+Next, **2.5 marks** will be awarded if all included graphs/tables are formatted to maximise readability (i.e. main heading, labs, tick spacing and frequency, plot character, and caption).
+
+Finally, you will be awarded a maximum of **5 marks** based on the clarity, coherence, and quality of your written expression. This corresponds to a report that is clear in its expression, logical in its presentation of the steps followed, and free from grammatical and typographic errors.
+
+## Version Control Requirements
+
+You must use a recognised online code repository (e.g., GitHub) and make regular well-named commits to your private repository. A link to your code repo must be included in a README as part of the final submission and you must add your lecturer as a developer to the repository. The repository must be named *2022_DAIE_GCA_StudentInitials1_StudentInitials2*.
+
+Your grade for this component will depend directly upon the **regularity** of your commits. A development project of this size should consist of a minimum of **5+ distinct commit messages** spread over the lifetime of the development. Committing all your code in one commit, before the deadline, will be interpreted negatively. 
+
+<span style="color: red;">**Any submission made which does not include a repository link will not be graded.**</span>
+
+## Submission Requirements
+
+1. A single **ZIP file** containing your report in **PDF** format and a **README** file containing a link to your R source code repository. Ensure that **no** changes are made to the repository following the submission deadline. You should create a separate fork for this submission and leave it unchanged after the deadline. Ask your lecturer for details on fork creation.
+2. The assignment must be entirely the work of each student group. Students are **not** permitted to share any pseudocode or source code from their solution with any other group in the class.
+3. Students may **not** distribute the source code of their solution to any other student, in any format (i.e., electronic, verbal, or hardcopy transmission).
+4. Plagiarised assignments will receive a mark of **zero**. This also applies to the individual/group allowing their work to be plagiarised. Any plagiarism will be reported to the Head of Department and a report will be added to your permanent academic record. 
+5. Late assignments will **only** be accepted if accompanied by the appropriate medical note. This documentation must be received within 10 working days of the project deadline. The Institute standard penalties for late submission will apply.
+6. Each student group **must** complete and **sign** a single assignment cover sheet. Please submit the signed cover sheet before 5 pm on the Friday of the week of the deadline.
+7.	Online individual video interviews for this project will be scheduled in the **first week** following the deadline. You will need both audio and video in this interview so please ensure that you have both setups beforehand and adequate connection speed to support the video session (i.e., download/upload speeds >= 1.2Mbps). The interview will not take place in the absence of video and audio from your side of the connection.
+8.	Failure to attend the **interview** will result in a 0% grade. Both students in a group will be required to answer **several questions** on your submission to demonstrate understanding of the submitted project. Your **individual grade** for this component will be contingent on your **knowledge** of the work you submit. 
+
+## Recommended Reading
+
+* [DkIT - Writing in the sciences...: Lab Reports](https://dkit.ie.libguides.com/writinginthesciences/LabReports)
+* [Writing Up Research - Discovering Statistics](http://www.discoveringstatistics.com/docs/writinglabreports.pdf)
+* [Recommended Text - OpenIntro Statistics Videos & Slides](https://www.openintro.org/book/os/) 
+* [7 Types of Statistical Analysis: Definition and Explanation](https://www.analyticssteps.com/blogs/7-types-statistical-analysis-definition-explanation)
+
+
+## Additional Resources
+
+The resources below are provided as a mixture of **optional background reading**, technical reference, and useful tools. 
+
+* [HSE - Treatment Post-traumatic stress disorder](https://www2.hse.ie/conditions/ptsd/treatment/)
+* [Mayo Clinic - Post-traumatic stress disorder](https://www.mayoclinic.org/diseases-conditions/post-traumatic-stress-disorder/symptoms-causes/syc-20355967)
+* [Psychology Today - Sandplay Therapy](https://www.psychologytoday.com/ie/therapy-types/sandplay-therapy)
+* [PTSD Symptom Scale-Interview Version](https://psycnet.apa.org/doiLanding?doi=10.1037%2Ft05176-000)
+* [Sensory-processing sensitivity and its relation to introversion and emotionality](https://pubmed.ncbi.nlm.nih.gov/9248053/)
+* [YouTube - Riffomonas Project - R Language Tutorials](https://www.youtube.com/c/RiffomonasProject)
+* [Mendeley - Manage and share research papers](https://www.mendeley.com)
+* [Microsoft OneNote - Note taking and web page snipping](http://webmail.dkit.ie)
+* [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)
+* [R Markdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+* [Understanding YAML headers](https://zsmith27.github.io/rmarkdown_crash-course/lesson-4-yaml-headers.html)
+* [R Markdown Themes](https://bootswatch.com/)
+* [Harvard referencing quick guide: Citing and referencing material](https://dkit.ie.libguides.com/harvard/citing-referencing)
+
+Formal Harvard referencing guidelines have **not** been followed in this document.
